@@ -7,6 +7,7 @@ def search_and_remove_security_group_rules(ip_cidr_list, dry_run=False):
     try:
         response = ec2.describe_security_groups()
         security_groups = response['SecurityGroups']
+        print(security_groups)
         
         for security_group in security_groups:
             existing_rules = security_group['IpPermissions']
